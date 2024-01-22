@@ -1,3 +1,6 @@
+## [0.1.9] - 2024-01-22
+- Revert to not use ingress-stream option
+
 ## [0.1.8] - 2024-01-22
 - Fix DOCS.md
 - Ingress to use stream option

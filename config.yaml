@@ -1,6 +1,6 @@
 ---
 name: Brother-QL Web
-version: 0.1.8
+version: 0.1.9
 slug: brother-ql_web
 description: "Web UI for print labels on Brother Label Printers"
 url: "https://github.com/dersimn/brother_ql_web"
@@ -15,8 +15,7 @@ ports_description:
 ingress: true
 ingress_port: 8013
 ingress_entry: /labeldesigner
-ingress_stream: true
-webui: http://[HOST]:[PORT:8013]/labeldesigner
+# webui: http://[HOST]:[PORT:8013]/labeldesigner
 options:
   printer: '192.168.1.98'
   model: QL-500

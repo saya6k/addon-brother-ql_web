@@ -40,9 +40,6 @@ RUN \
 # Copy root filesystem for our image
 COPY rootfs /
 
-# RUN mkdir -p /app/instance
-# COPY example.py /app/instance/application.py
-
 # Build arugments
 ARG BUILD_DATE
 ARG BUILD_REF
@@ -61,7 +58,7 @@ LABEL \
     org.opencontainers.image.description="Home Assistant Community Add-on: ${BUILD_ARCH} Brother-QL Web" \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
     org.opencontainers.image.authors="github.com/saya6k" \
-    org.opencontainers.image.licenses="TBD" \
+    org.opencontainers.image.licenses="GPLv3" \
     org.opencontainers.image.url="https://addons.community" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/master/README.md" \

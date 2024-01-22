@@ -1,3 +1,6 @@
+## [0.1.4] - 2024-01-22
+- Experimental Ingress Support. Might not work.
+
 ## [0.1.3] - 2024-01-22
 - Revert and remove USB option
 - Make add-on work with only IP address

@@ -18,7 +18,7 @@ log_level: info
 
 ### Option: `printer`
 
-The `printer` option defines which printer to use. You should define IP address
+The `printer` option defines which printer to use. You should define proper IP address like:
 
 - '192.168.0.23'
 

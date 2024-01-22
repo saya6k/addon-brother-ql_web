@@ -1,3 +1,7 @@
+## [0.1.10] - 2024-01-22
+- Show Ingress API url in log output
+- Option to customize fonts_directory
+
 ## [0.1.9] - 2024-01-22
 - Revert to not use ingress-stream option
 

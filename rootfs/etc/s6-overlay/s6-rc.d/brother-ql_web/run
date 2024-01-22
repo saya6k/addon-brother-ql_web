@@ -6,10 +6,7 @@
 bashio::log.info "Starting Brother-QL Web..."
 
 APP_DIR="/app"
-CONFIG_DIR="/config/addons_config/brother-ql_web/"
-
-mkdir -p $CONFIG_DIR
-chmod -R 775 $CONFIG_DIR
+DEFAULT_FONTS_DIR="/config/addons_config/brother-ql_web/fonts/"
 
 # Retrieve configuration values
 PRINTER=$(bashio::config 'printer')
@@ -17,23 +14,38 @@ MODEL=$(bashio::config 'model')
 DEFAULT_LABEL_SIZE=$(bashio::config 'default_label_size')
 DEFAULT_ORIENTATION=$(bashio::config 'default_orientation')
 LOGLEVEL=$(bashio::config 'log_level')
+FONTS_DIR=$(bashio::config 'fonts_directory')
 bashio::log.info "PRINTER=$PRINTER"
 bashio::log.info "MODEL=$MODEL"
 bashio::log.info "DEFAULT_LABEL_SIZE=$DEFAULT_LABEL_SIZE"
 bashio::log.info "DEFAULT_ORIENTATION=$DEFAULT_ORIENTATION"
 bashio::log.info "LOGLEVEL=$LOGLEVEL"
+bashio::log.info "FONTS_DIR=$FONTS_DIR"
 
 # Define additional environment variables
-# export GRADIO_ROOT_PATH=$(bashio::addon.ingress_entry)
-# bashio::log.info "Serving app from $GRADIO_ROOT_PATH"
+export GRADIO_ROOT_PATH=$(bashio::addon.ingress_entry)
+bashio::log.info "Serving app from $GRADIO_ROOT_PATH"
 
-# Create FONTS_DIR
-mkdir -p /config/addons_config/brother-ql_web/fonts
-chmod -R 775 /config/addons_config/brother-ql_web/fonts
-bashio::log.info "Creating 'fonts/' directory in $CONFIG_DIR..."
-bashio::log.info "You can add custom fonts in $CONFIG_DIR/fonts/"
+# FONTS_DIR
+if bashio::config.has_value "fonts_directory" && ! bashio::config.is_empty "fonts_directory"; then
+    FONTS_DIR=$(bashio::config 'fonts_directory')
+    if ! bashio::fs.directory_exists "$FONTS_DIR"; then
+        FONTS_DIR=$DEFAULT_FONTS_DIR
+        mkdir -p $FONTS_DIR
+        bashio::log.warning "The provided models directory '$FONTS_DIR' does not exist! Defaulting to '$DEFAULT_FONTS_DIR'"
+    else
+        bashio::log.info "Using chosen storage for fonts: '$FONTS_DIR'"
+    fi
+else
+    FONTS_DIR=$DEFAULT_FONTS_DIR
+    mkdir -p $FONTS_DIR
+    bashio::log.info "Using default local storage for fonts."
+fi
 
+# ensure we can access the folder
+chmod -R 775 $FONTS_DIR
+bashio::log.info "Using custom fonts in $FONTS_DIR..."
 
 # Navigate to application directory and execute the Python script
 cd $APP_DIR
-exec python3 -u run.py --font-folder "/config/addons_config/brother-ql_web/fonts" --model $MODEL --default-label-size $DEFAULT_LABEL_SIZE --default-orientation $DEFAULT_ORIENTATION --loglevel $LOGLEVEL tcp://$PRINTER:9100
+exec python3 -u run.py --font-folder $FONTS_DIR --model $MODEL --default-label-size $DEFAULT_LABEL_SIZE --default-orientation $DEFAULT_ORIENTATION --loglevel $LOGLEVEL tcp://$PRINTER:9100

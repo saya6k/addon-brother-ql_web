@@ -1,6 +1,6 @@
 ---
 name: Brother-QL Web
-version: 0.1.11
+version: 0.1.12
 slug: brother-ql_web
 description: "Web UI for print labels on Brother Label Printers"
 url: "https://github.com/dersimn/brother_ql_web"

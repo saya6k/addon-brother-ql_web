@@ -21,7 +21,7 @@ log_level: info
 The `printer` option defines which printer to use. Possible values are:
 
 - 'tcp://192.168.0.23:9100'
-> 'file:///dev/usb/lp0' _Untested_
+- 'file:///dev/usb/lp0' _Untested_
 
 ### Option: `default_label_size`
 

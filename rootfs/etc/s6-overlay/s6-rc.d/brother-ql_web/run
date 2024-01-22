@@ -7,6 +7,8 @@ bashio::log.info "Starting Brother-QL Web..."
 
 APP_DIR="/app"
 DEFAULT_FONTS_DIR="/config/addons_config/brother-ql_web/fonts/"
+DEFAULT_LABEL_SIZE="62"
+DEFAULT_ORIENTATION="standard"
 DEFAULT_LOGLEVEL="info"
 
 # Retrieve configuration values
@@ -57,4 +59,10 @@ fi
 
 # Navigate to application directory and execute the Python script
 cd $APP_DIR
-exec python3 -u run.py --font-folder $FONTS_DIR --model $MODEL --default-label-size $DEFAULT_LABEL_SIZE --default-orientation $DEFAULT_ORIENTATION --loglevel $LOGLEVEL tcp://$PRINTER:9100
+exec python3 -u run.py \
+    --model $MODEL \
+    --default-label-size $DEFAULT_LABEL_SIZE \
+    --default-orientation $DEFAULT_ORIENTATION \
+    --font-folder $FONTS_DIR \
+    --loglevel $LOGLEVEL \
+    tcp://$PRINTER:9100

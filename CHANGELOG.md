@@ -1,3 +1,7 @@
+## [0.1.15] - 2024-01-22
+- Revert ingress_entry option
+- Make `model` mandatory
+
 ## [0.1.14] - 2024-01-22
 - Test ingress_entry option
 

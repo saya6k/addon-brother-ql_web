@@ -106,7 +106,7 @@ All in all, the web server offers:
 
 **Note**: _Remember to restart the add-on when you newly added fonts._
 
-> You can use custom fonts in `/config/addons_config/brother-ql_web/fonts/` folder _Working On..._
+You can use custom fonts in `/config/addons_config/brother-ql_web/fonts/`.
 
 It should be .ttf/.otf fonts format.
 

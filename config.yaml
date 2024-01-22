@@ -1,6 +1,6 @@
 ---
 name: Brother-QL Web
-version: 0.1.0
+version: 0.1.1
 slug: brother-ql_web
 description: "Web UI for print labels on Brother Label Printers"
 url: "https://github.com/dersimn/brother_ql_web"
@@ -26,3 +26,6 @@ schema:
   default_label_size: list(12|29|38|50|54|62|102|17x54|17x87|23x23|29x42|29x90|39x90|39x48|52x29|62x29|62x100|102x51|102x152|d12|d24|d58)?
   default_orientation: list(standard|rotated)?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
+map:
+  - config:rw
+  - ssl

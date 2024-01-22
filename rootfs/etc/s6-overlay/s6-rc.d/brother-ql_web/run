@@ -7,8 +7,8 @@ bashio::log.info "Starting Brother-QL Web..."
 
 APP_DIR="/app"
 DEFAULT_FONTS_DIR="/config/addons_config/brother-ql_web/fonts/"
-DEFAULT_LABEL_SIZE="62"
-DEFAULT_ORIENTATION="standard"
+EXAMPLE_LABEL_SIZE="62"
+EXAMPLE_ORIENTATION="standard"
 DEFAULT_LOGLEVEL="info"
 
 # Retrieve configuration values
@@ -28,6 +28,22 @@ bashio::log.info "LOGLEVEL=$LOGLEVEL"
 # Define additional environment variables
 export GRADIO_ROOT_PATH=$(bashio::addon.ingress_entry)
 bashio::log.info "Serving app from $GRADIO_ROOT_PATH"
+
+# DEFAULT_LABEL_SIZE
+if bashio::config.has_value "default_label_size"; then
+    bashio::log.info "Using chosen default label size: '$DEFAULT_LABEL_SIZE'"
+else
+    DEFAULT_LABEL_SIZE=$EXAMPLE_LABEL_SIZE
+    bashio::log.info "Using default label size = '$EXAMPLE_LABEL_SIZE'..."
+fi
+
+# DEFAULT_ORIENTATION
+if bashio::config.has_value "default_orientation"; then
+    bashio::log.info "Using chosen default orientation: '$DEFAULT_ORIENTATION'"
+else
+    DEFAULT_ORIENTATION=$EXAMPLE_ORIENTATION
+    bashio::log.info "Using default orientation = '$EXAMPLE_ORIENTATION'..."
+fi
 
 # FONTS_DIR
 if bashio::config.has_value "fonts_directory" && ! bashio::config.is_empty "fonts_directory"; then
@@ -54,7 +70,7 @@ if bashio::config.has_value "log_level"; then
     bashio::log.info "Using chosen log level: '$LOGLEVEL'"
 else
     LOGLEVEL=$DEFAULT_LOGLEVEL
-    bashio::log.info "Using default log level = 'info'..."
+    bashio::log.info "Using default log level = '$DEFAULT_LOGLEVEL'..."
 fi
 
 # Navigate to application directory and execute the Python script

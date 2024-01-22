@@ -1,3 +1,6 @@
+## [0.1.16] - 2024-01-22
+- Make `default_label_size` and `default_orientation` to use example value when undefined
+
 ## [0.1.15] - 2024-01-22
 - Revert ingress_entry option
 - Make `model` mandatory

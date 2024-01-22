@@ -1,3 +1,6 @@
+## [0.1.8] - 2024-01-22
+- Fix DOCS.md
+
 ## [0.1.7] - 2024-01-22
 - Fix `PRINTER` option regex
 

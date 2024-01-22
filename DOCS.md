@@ -10,9 +10,9 @@ Example add-on configuration:
 
 ```yaml
 printer: 192.168.0.23
+model: QL-500
 default-label-size: 62
 default-orientation: standard
-model: QL-500
 log_level: info
 ```
 
@@ -21,6 +21,25 @@ log_level: info
 The `printer` option defines which printer to use. You should define proper IP address like:
 
 - '192.168.0.23'
+
+### Option: `model`
+
+The model of your printer (default: QL-500)
+Possible Options are:
+
+- QL-500
+- QL-550
+- QL-560
+- QL-570
+- QL-580N
+- QL-650TD
+- QL-700
+- QL-710W
+- QL-720NW
+- QL-810W
+- QL-820NWB
+- QL-1050
+- QL-1060N
 
 ### Option: `default_label_size`
 
@@ -55,25 +74,6 @@ Label size inserted in your printer. Defaults to 62.
 
 Label orientation, defaults to "standard". To turn your text by 90°,
 state "rotated".
-
-### Option: `model`
-
-The model of your printer (default: QL-500)
-Possible Options are:
-
-- QL-500
-- QL-550
-- QL-560
-- QL-570
-- QL-580N
-- QL-650TD
-- QL-700
-- QL-710W
-- QL-720NW
-- QL-810W
-- QL-820NWB
-- QL-1050
-- QL-1060N
 
 ### Option: `log_level`
 

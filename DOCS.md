@@ -9,7 +9,7 @@ This is a web service to print labels on Brother QL label printers.
 Example add-on configuration:
 
 ```yaml
-printer: tcp://192.168.0.23:9100
+printer: 192.168.0.23
 default-label-size: 62
 default-orientation: standard
 model: QL-500
@@ -18,10 +18,9 @@ log_level: info
 
 ### Option: `printer`
 
-The `printer` option defines which printer to use. Possible values are:
+The `printer` option defines which printer to use. You should define IP address
 
-- 'tcp://192.168.0.23:9100'
-- 'file:///dev/usb/lp0' _Untested_
+- '192.168.0.23'
 
 ### Option: `default_label_size`
 

@@ -36,4 +36,4 @@ bashio::log.info "You can add custom fonts in $CONFIG_DIR/fonts/"
 
 # Navigate to application directory and execute the Python script
 cd $APP_DIR
-exec python3 -u run.py --font-folder "/config/addons_config/brother-ql_web/fonts" --model $MODEL --default-label-size $DEFAULT_LABEL_SIZE --default-orientation $DEFAULT_ORIENTATION --loglevel $LOGLEVEL $PRINTER
+exec python3 -u run.py --font-folder "/config/addons_config/brother-ql_web/fonts" --model $MODEL --default-label-size $DEFAULT_LABEL_SIZE --default-orientation $DEFAULT_ORIENTATION --loglevel $LOGLEVEL tcp://$PRINTER:9100

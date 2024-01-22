@@ -1,3 +1,7 @@
+## [0.1.3] - 2024-01-22
+- Revert and remove USB option
+- Make add-on work with only IP address
+
 ## [0.1.2] - 2024-01-22
 - Make add-on work with USB label printer
 

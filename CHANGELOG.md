@@ -1,3 +1,7 @@
+## [0.1.17] - 2024-01-22
+- Panel Modification
+- Minor Fix
+
 ## [0.1.16] - 2024-01-22
 - Make `default_label_size` and `default_orientation` to use example value when undefined
 

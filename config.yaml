@@ -1,6 +1,6 @@
 ---
 name: Brother-QL Web
-version: 0.1.16
+version: 0.1.17
 slug: brother-ql_web
 description: "Web UI for print labels on Brother Label Printers"
 url: "https://github.com/dersimn/brother_ql_web"
@@ -12,6 +12,9 @@ ports:
   8013/tcp: null
 ports_description:
   8013/tcp: Web interface
+panel_icon: mdi:printer-pos
+panel_title: Brother-QL Web
+panel_admin: true  
 ingress: true
 ingress_port: 8013
 # ingress_entry: /

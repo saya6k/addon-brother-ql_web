@@ -34,7 +34,7 @@ if bashio::config.has_value "default_label_size"; then
     bashio::log.info "Using chosen default label size: '$DEFAULT_LABEL_SIZE'"
 else
     DEFAULT_LABEL_SIZE=$EXAMPLE_LABEL_SIZE
-    bashio::log.info "Using default label size = '$EXAMPLE_LABEL_SIZE'..."
+    bashio::log.info "Using example label size = '$EXAMPLE_LABEL_SIZE'..."
 fi
 
 # DEFAULT_ORIENTATION
@@ -42,7 +42,7 @@ if bashio::config.has_value "default_orientation"; then
     bashio::log.info "Using chosen default orientation: '$DEFAULT_ORIENTATION'"
 else
     DEFAULT_ORIENTATION=$EXAMPLE_ORIENTATION
-    bashio::log.info "Using default orientation = '$EXAMPLE_ORIENTATION'..."
+    bashio::log.info "Using example orientation = '$EXAMPLE_ORIENTATION'..."
 fi
 
 # FONTS_DIR

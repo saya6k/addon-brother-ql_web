@@ -1,3 +1,6 @@
+## [0.1.7] - 2024-01-22
+- Fix `PRINTER` option regex
+
 ## [0.1.6] - 2024-01-22
 - Fix version
 

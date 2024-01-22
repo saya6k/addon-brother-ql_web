@@ -13,7 +13,6 @@ printer: 192.168.1.98
 model: QL-500
 default-label-size: 62
 default-orientation: standard
-log_level: info
 ```
 
 ### Option: `printer`

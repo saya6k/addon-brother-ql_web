@@ -12,14 +12,11 @@ RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        ca-certificates \
-        curl \
         git \
         build-essential \
         cmake \
         python3.10 \
         python3-dev \
-        python3-venv \
         python3-pip \
         fontconfig \
         poppler-utils \

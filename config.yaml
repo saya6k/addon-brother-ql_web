@@ -1,6 +1,6 @@
 ---
 name: Brother-QL Web
-version: 0.1.13
+version: 0.1.14
 slug: brother-ql_web
 description: "Web UI for print labels on Brother Label Printers"
 url: "https://github.com/dersimn/brother_ql_web"
@@ -14,11 +14,12 @@ ports_description:
   8013/tcp: Web interface
 ingress: true
 ingress_port: 8013
-ingress_entry: labeldesigner
+ingress_entry: /
+# ingress_entry: labeldesigner
 options:
   printer: '192.168.1.98'
   model: QL-500
-  default_label_size: 62
+  default_label_size: '62'
   default_orientation: standard
 schema:
   printer: match(^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$)

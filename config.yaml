@@ -1,6 +1,6 @@
 ---
 name: Brother-QL Web
-version: 0.1.12
+version: 0.1.13
 slug: brother-ql_web
 description: "Web UI for print labels on Brother Label Printers"
 url: "https://github.com/dersimn/brother_ql_web"
@@ -20,7 +20,6 @@ options:
   model: QL-500
   default_label_size: 62
   default_orientation: standard
-  log_level: info
 schema:
   printer: match(^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$)
   model: list(QL-500|QL-550|QL-560|QL-570|QL-580N|QL-650TD|QL-700|QL-710W|QL-720NW|QL-810W|QL-820NWB|QL-1050|QL-1060N)?

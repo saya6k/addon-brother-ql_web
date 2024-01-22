@@ -7,6 +7,7 @@ bashio::log.info "Starting Brother-QL Web..."
 
 APP_DIR="/app"
 DEFAULT_FONTS_DIR="/config/addons_config/brother-ql_web/fonts/"
+DEFAULT_LOGLEVEL="info"
 
 # Retrieve configuration values
 PRINTER=$(bashio::config 'printer')
@@ -19,8 +20,8 @@ bashio::log.info "PRINTER=$PRINTER"
 bashio::log.info "MODEL=$MODEL"
 bashio::log.info "DEFAULT_LABEL_SIZE=$DEFAULT_LABEL_SIZE"
 bashio::log.info "DEFAULT_ORIENTATION=$DEFAULT_ORIENTATION"
-bashio::log.info "LOGLEVEL=$LOGLEVEL"
 bashio::log.info "FONTS_DIR=$FONTS_DIR"
+bashio::log.info "LOGLEVEL=$LOGLEVEL"
 
 # Define additional environment variables
 export GRADIO_ROOT_PATH=$(bashio::addon.ingress_entry)
@@ -45,6 +46,14 @@ fi
 # ensure we can access the folder
 chmod -R 775 $FONTS_DIR
 bashio::log.info "Using custom fonts in $FONTS_DIR..."
+
+# LOGLEVEL
+if bashio::config.has_value "log_level"; then
+    bashio::log.info "Using chosen log level: '$LOGLEVEL'"
+else
+    LOGLEVEL=$DEFAULT_LOGLEVEL
+    bashio::log.info "Using default log level = 'info'..."
+fi
 
 # Navigate to application directory and execute the Python script
 cd $APP_DIR

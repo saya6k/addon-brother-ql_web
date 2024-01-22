@@ -1,3 +1,7 @@
+## [0.1.5] - 2024-01-22
+- Fix `PRINTER` option to accept IP aderess and check regex.
+- Add WebUI option.
+
 ## [0.1.4] - 2024-01-22
 - Experimental Ingress Support. Might not work.
 

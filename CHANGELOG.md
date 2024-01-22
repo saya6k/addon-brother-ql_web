@@ -1,3 +1,6 @@
+## [0.1.12] - 2024-01-22
+- Minor Fix
+
 ## [0.1.11] - 2024-01-22
 - Fix `fonts_directory` option regex
 

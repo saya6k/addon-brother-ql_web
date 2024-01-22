@@ -14,7 +14,7 @@ ports_description:
   8013/tcp: Web interface
 ingress: true
 ingress_port: 8013
-ingress_entry: /labeldesigner
+ingress_entry: labeldesigner
 options:
   printer: '192.168.1.98'
   model: QL-500
